@@ -1,0 +1,52 @@
+class UsabilityTest:
+    def __init__(self, library_name, focus):
+        self.library_name = library_name
+        self.focus = focus
+        self.users = []
+        self.tasks = []
+        self.method = {}
+        self.results = {}
+        self.conclusions = []
+    def add_user_demographics(self, age_group, gender, education_level, experience):
+        self.users.append({
+            'age_group': age_group,
+            'gender': gender,
+            'education_level': education_level,
+            'experience': experience
+        })
+    def add_task(self, task_description):
+        self.tasks.append(task_description)
+    def set_method(self, test_procedure, environment, recording_method, explanation, consent_form):
+        self.method = {
+            'test_procedure': test_procedure,
+            'environment': environment,
+            'recording_method': recording_method,
+            'explanation_to_users': explanation,
+            'consent_form': consent_form
+        }
+    def add_result(self, task_completion_status, error_rate, task_completion_time, satisfaction_questionnaire_result):
+        self.results = {
+            'task_completion_status': task_completion_status,
+            'error_rate': error_rate,
+            'task_completion_time': task_completion_time,
+            'satisfaction_questionnaire_result': satisfaction_questionnaire_result
+        }
+    def add_conclusion(self, problem_detected):
+        self.conclusions.append(problem_detected)
+
+# Usage example:
+usability_test = UsabilityTest("Library Name", "User Interface")
+usability_test.add_user_demographics("18-65", "Male", "College", "Regular user")
+usability_test.add_task("Search for a book by title")
+usability_test.set_method("Observation", "Library Setting", "Video Recording", "Explained verbally", "Consent Form Signed")
+usability_test.add_result("Completed", "Low", "Varied", "Positive")
+usability_test.add_conclusion("Difficulty in finding search bar")
+
+# Print or use the data
+print("Library Name:", usability_test.library_name)
+print("Focus:", usability_test.focus)
+print("Users:", usability_test.users)
+print("Tasks:", usability_test.tasks)
+print("Method:", usability_test.method)
+print("Results:", usability_test.results)
+print("Conclusions:", usability_test.conclusions)
